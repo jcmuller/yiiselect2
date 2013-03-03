@@ -1,7 +1,7 @@
 yii-select2
 ===========
 
-Select2 extension for YII
+[select2](http://ivaynberg.github.com/select2/) extension for [YII](http://www.yiiframework.com/).
 
 Usage:
 
