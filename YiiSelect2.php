@@ -20,7 +20,7 @@ class YiiSelect2 extends CWidget
   /**
    * @var string apply select plugin to these elements.
    */
-  public $target = '.select2';
+  public $target = '.yii-select2';
 
   /**
    * @var boolean include un-minified plugin then debuging.
@@ -43,8 +43,8 @@ class YiiSelect2 extends CWidget
   public function run()
   {
     // Publish extension assets
-    $assets = Yii::app()->getAssetManager()->publish( Yii::getPathOfAlias(
-      'ext.YiiSelect2' ) . '/assets' );
+    $assets = Yii::app()->getAssetManager()->
+      publish(Yii::getPathOfAlias('ext.YiiSelect2') . '/assets');
 
     // Register extension assets
     $cs = Yii::app()->getClientScript();
@@ -52,25 +52,12 @@ class YiiSelect2 extends CWidget
 
     // Get extension for JavaScript file
     $ext = '.min.js';
-    if( $this->debug )
+    if ($this->debug)
       $ext = '.js';
 
-    // Use jQuery plugin version
-    if( $this->useJQuery )
-    {
-      // Register jQuery scripts
-      $options = CJavaScript::encode( $this->options );
-      $cs->registerScriptFile( $assets . '/select2.jquery' . $ext,
-        $this->scriptPosition );
-      $cs->registerScript( 'select2',
-        "$( '{$this->target}' ).select2({$options});", CClientScript::POS_READY );
-    }
-    // Use Prototype plugin version
-    else
-    {
-      // Register Prototype scripts
-      $cs->registerScriptFile( $assets . '/select2.proto' . $ext,
-        $this->scriptPosition );
-    }
+    $options = CJavaScript::encode($this->options);
+    $cs->registerScriptFile("{$assets}/select2{$ext}", $this->scriptPosition);
+    $cs->registerScript('select2', "$('{$this->target}').select2({$options});",
+      CClientScript::POS_READY);
   }
 }
