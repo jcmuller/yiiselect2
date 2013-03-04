@@ -1,5 +1,5 @@
-yii-select2
-===========
+YiiSelect2
+==========
 
 [select2](http://ivaynberg.github.com/select2/) extension for [YII](http://www.yiiframework.com/).
 
