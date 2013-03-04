@@ -13,8 +13,8 @@ In the view you want to use YiiSelect2
 
 Where options can be:
 
-* target - jQuery elements to be matched
-* debug - Boolean. Whether to include minified JS file or regular
-* options - Hash. Native options to pass through to select2
-* scriptPosition - This can be one of the CClientScript::POS_* constants. Defaults to
+* `target` - jQuery elements to be matched
+* `debug` - Boolean. Whether to include minified JS file or regular
+* `options` - Hash. Native options to pass through to select2
+* `scriptPosition` - This can be one of the CClientScript::POS_* constants. Defaults to
   CClientScript::POS_END.
