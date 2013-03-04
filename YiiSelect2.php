@@ -48,7 +48,7 @@ class YiiSelect2 extends CWidget
 
     // Register extension assets
     $cs = Yii::app()->getClientScript();
-    $cs->registerCssFile( $assets . '/select2.css' );
+    $cs->registerCssFile($assets . '/select2.css');
 
     // Get extension for JavaScript file
     $ext = '.min.js';
